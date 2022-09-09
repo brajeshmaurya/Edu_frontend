@@ -1,0 +1,60 @@
+
+<div class="animated fadeIn">
+    <div class="card-header">
+      <div class="row">
+        <nav class="navigation-item">
+          <button routerLink="../user_management" class="nav-roles">{{'Role Management' | translate}}</button>
+          <button routerLink="../manage_user" class="nav-users">{{'User Management' | translate}}</button>
+        </nav>
+        
+        <!-- <div class="col-xs-10">
+          <div class="input-group">
+            <input
+              type="search"
+              autocomplete="off"
+              maxlength= "20" 
+              name="focus"
+              [(ngModel)]="loanFilter"
+              (keyup)="quickSearch($event)"
+              placeholder="  Search"
+            /><i (click) = "cancel()" class="fa fa-times"></i>
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fa fa-search"></i> </span>
+            </div>
+          </div>
+        </div> -->
+        <!--
+      </div>
+    </div>
+-->
+  <div class="grid-card-body" 
+       style="border: 1px solid #C4C4C4; border-radius: 0px 0px 5px 5px; margin-bottom: 20px;">
+      <ag-grid-angular 
+        style="width: 100%; height: 50vh" 
+        class="ag-theme-alpine"
+        [animateRows]="true"
+        [rowData]="userRole" 
+        [gridOptions]="gridOptions" 
+        [columnDefs]="columnDefs"
+        [frameworkComponents]="frameworkComponents" 
+        [paginationPageSize]="paginationPageSize" 
+        [animateRows]="true" 
+        [pagination]="true" 
+        (gridReady)="onGridReady($event)">
+      </ag-grid-angular>
+      <div class="py-2 pl-4 border-top">
+        <!-- <p class="mb-0">
+          Total Records: <strong> {{ recordCount }}</strong>
+          <span class="select-rec-count-position">
+            {{'role.selectRecordCount' | translate}}
+          <span class="ml-5">
+            <select id="menu" #t (change)="callType(t.value)">
+              <option *ngFor="let type of types" [value]="type">{{type}}</option>
+            </select>
+          </span>
+        </span>
+        </p> -->
+      </div>
+    </div> 
+  </div>
+  
